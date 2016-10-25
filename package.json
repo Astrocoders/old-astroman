@@ -2,7 +2,8 @@
   "name": "astro-meteor-easy-testing",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "publish": "cd packages/easy-testing && meteor publish"
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"
