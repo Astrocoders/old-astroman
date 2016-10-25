@@ -19,6 +19,8 @@ Package.onUse(function(api) {
     'practicalmeteor:mocha@2.4.5_6',
     'practicalmeteor:mocha-console-runner@0.2.1',
     'dispatch:mocha-phantomjs@0.1.7',
+    'xolvio:backdoor@0.2.1',
+    'xolvio:cleaner@0.3.1',
   ])
 
   api.mainModule('easy-testing.js');
