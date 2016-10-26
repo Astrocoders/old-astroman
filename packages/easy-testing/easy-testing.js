@@ -16,17 +16,12 @@ requiredNpmDeps.forEach(packageName => {
     !itHasPackageInItsDeps({ packageName })
   ) {
     console.log(`Installing ${packageName}...`)
-    const root = getAppMainPackagePath()
-    console.log({ root})
-    const npmInstallProc = exec(`cd ${root} && npm install --save-dev ${packageName}`)
 
+    const root = getAppMainPackagePath()
+    const npmInstallProc = exec(`cd ${root} && npm install --save-dev ${packageName}`)
 
     npmInstallProc.stdout.pipe(process.stdout)
     npmInstallProc.stderr.pipe(process.stderr)
-
-    npmInstallProc.on('close', (code) => {
-      console.log(`Installed ${packageName}, code ${code}`)
-    })
   }
 })
 
