@@ -7,5 +7,8 @@
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"
+  },
+  "devDependencies": {
+    "codeceptjs": "^0.4.8"
   }
 }
