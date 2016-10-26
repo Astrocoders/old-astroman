@@ -10,6 +10,10 @@ Package.describe({
   documentation: 'README.md'
 });
 
+Npm.depends({
+  'lodash.merge': '4.6.0',
+})
+
 Package.onUse(function(api) {
   api.versionsFrom('1.4.1.2');
   api.use('ecmascript');

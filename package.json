@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "publish": "cd packages/easy-testing && meteor publish"
+    "publish": "cd packages/easy-testing && meteor publish",
+    "test:acceptance": "codeceptjs run --steps"
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"
