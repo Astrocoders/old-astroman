@@ -18,10 +18,14 @@ var _path2 = _interopRequireDefault(_path);
 
 var _lodash = require('lodash');
 
+var _findConfig = require('find-config');
+
+var _findConfig2 = _interopRequireDefault(_findConfig);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function getAppMainPackagePath() {
-  var root = process.cwd();
+  var root = (0, _findConfig2.default)('package.json').replace('package.json', '');
   var rootWithinAnAppDir = _path2.default.join(root, '../app');
 
   if (_fs2.default.existsSync(rootWithinAnAppDir)) {

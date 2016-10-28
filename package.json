@@ -1,8 +1,8 @@
 {
   "name": "astroman",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
-    "pre-publish": "rm -rf dist && babel lib/ --out-dir dist/ --ignore=**/tests",
+    "prepublish": "rm -rf dist && babel lib/ --out-dir dist/ --ignore=**/tests",
     "relink": "npm run pre-publish && npm link",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "colors": "^1.1.2",
+    "find-config": "^1.0.0",
     "lodash": "^4.16.4",
     "yargs": "^6.3.0"
   },
