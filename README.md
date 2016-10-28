@@ -1,4 +1,6 @@
 # `astroman`
+[![travis](https://travis-ci.org/Astrocoders/astroman.svg?branch=develop)](https://travis-ci.org/Astrocoders/astroman)
+
 Rapid scaffolding for React Native, Meteor and React Boilerplate [add more description] projects
 
 ## Install
