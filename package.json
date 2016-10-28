@@ -1,6 +1,13 @@
 {
   "name": "astroman",
-  "version": "0.1.2",
+  "version": "0.1.3",
+  "description": "Rapid scaffolding for React Native, Meteor and React Boilerplate projects",
+  "repository": {
+    "url": "git@github.com:Astrocoders/astroman.git",
+    "type": "git"
+  },
+  "author": "Gabriel Rubens <grsabreu@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "prepublish": "rm -rf dist && babel lib/ --out-dir dist/ --ignore=**/tests",
     "relink": "npm run pre-publish && npm link",
@@ -34,7 +41,11 @@
   "jest": {
     "rootDir": "./lib",
     "verbose": true,
-    "collectCoverageFrom": ["**/*.js"],
-    "coveragePathIgnorePatterns": ["/test_artifacts/"]
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/test_artifacts/"
+    ]
   }
 }
