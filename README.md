@@ -1,4 +1,4 @@
-# astroman
+# `astroman`
 Rapid scaffolding for React Native, Meteor and React Boilerplate [add more description] projects
 
 ## Install
