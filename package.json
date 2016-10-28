@@ -1,15 +1,8 @@
 {
-  "name": "astro-meteor-easy-testing",
-  "private": true,
+  "name": "astroman",
   "scripts": {
-    "start": "meteor run",
-    "publish": "cd packages/easy-testing && meteor publish",
-    "test:acceptance": "codeceptjs run --steps"
+    "pre-publish": "babel lib/ --out-dir dist/"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
-  },
-  "devDependencies": {
-    "codeceptjs": "^0.4.8"
   }
 }
