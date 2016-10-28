@@ -5,7 +5,8 @@
     "prepublish": "rm -rf dist && babel lib/ --out-dir dist/ --ignore=**/tests",
     "relink": "npm run pre-publish && npm link",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "bin": {
     "astroman": "dist/index.js"
@@ -32,6 +33,8 @@
   },
   "jest": {
     "rootDir": "./lib",
-    "verbose": true
+    "verbose": true,
+    "collectCoverageFrom": ["**/*.js"],
+    "coveragePathIgnorePatterns": ["/test_artifacts/"]
   }
 }

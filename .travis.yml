@@ -1,0 +1,22 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "7"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm i -g codeclimate-test-reporter
+  - npm i -g yarn
+  - yarn install
+
+script:
+  - npm test
+
+after_success:
+  - npm run test:coverage
+  - codeclimate-test-reporter < coverage/lcov.info
