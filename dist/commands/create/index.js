@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.handler = exports.describe = exports.command = undefined;
 
-var _colors = require('colors');
+var _safe = require('colors/safe');
 
-var _colors2 = _interopRequireDefault(_colors);
+var _safe2 = _interopRequireDefault(_safe);
 
 var _index = require('./react-native/index');
 
@@ -25,5 +25,8 @@ var describe = exports.describe = 'scaffolds a file';
 var handler = exports.handler = function handler(argv) {
   if ((0, _environment.isReactNative)()) {
     reactNativeCmds[argv.name]({ name: argv.value });
+    return;
   }
+
+  console.log(_safe2.default.red('You do not seem to be in any of the supported envs'));
 };
