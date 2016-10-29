@@ -10,7 +10,6 @@
   "license": "MIT",
   "scripts": {
     "prepublish": "rm -rf dist && babel lib/ --out-dir dist/ --ignore=**/tests",
-    "relink": "npm run prepublish && npm link",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
