@@ -21,15 +21,15 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _packageJson = require('../../utils/packageJson');
+var _packageJson = require('../../../utils/packageJson');
 
-var _js_code = require('../../utils/js_code');
+var _js_code = require('../../../utils/js_code');
 
-var _component = require('../../templates/component');
+var _component = require('../../../templates/component');
 
 var _component2 = _interopRequireDefault(_component);
 
-var _scene = require('../../templates/scene');
+var _scene = require('../../../templates/scene');
 
 var _scene2 = _interopRequireDefault(_scene);
 

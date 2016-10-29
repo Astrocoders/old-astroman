@@ -9,9 +9,13 @@ var _colors = require('colors');
 
 var _colors2 = _interopRequireDefault(_colors);
 
-var _scene = require('./scene');
+var _index = require('./react-native/index');
 
-var _scene2 = _interopRequireDefault(_scene);
+var reactNativeCmds = _interopRequireWildcard(_index);
+
+var _environment = require('../../utils/environment');
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19,8 +23,7 @@ var command = exports.command = 'create <name> [value]';
 var describe = exports.describe = 'scaffolds a file';
 
 var handler = exports.handler = function handler(argv) {
-  switch (argv.name) {
-    case 'scene':
-      return (0, _scene2.default)({ name: argv.value });
+  if ((0, _environment.isReactNative)()) {
+    reactNativeCmds[argv.name]({ name: argv.value });
   }
 };
