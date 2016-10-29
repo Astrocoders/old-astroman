@@ -26,22 +26,31 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function prependLine(_ref) {
-  var lineToAppend = _ref.lineToAppend,
+  var lineToPrepend = _ref.lineToPrepend,
       patternToPrepend = _ref.patternToPrepend,
       fileContent = _ref.fileContent;
 
+  if (fileContent.indexOf(lineToPrepend) !== -1) {
+    // included exists
+    return fileContent;
+  }
   var lines = fileContent.split('\n');
   var lastLineWithPattern = _lodash2.default.findLastIndex(lines, function (line) {
     return patternToPrepend.test(line);
   });
 
-  return [].concat(_toConsumableArray(lines.slice(0, lastLineWithPattern)), [lineToAppend], _toConsumableArray(lines.slice(lastLineWithPattern, lines.length))).join('\n');
+  return [].concat(_toConsumableArray(lines.slice(0, lastLineWithPattern)), [lineToPrepend], _toConsumableArray(lines.slice(lastLineWithPattern, lines.length))).join('\n');
 }
 
 function appendLine(_ref2) {
   var lineToAppend = _ref2.lineToAppend,
       patternToAppendAfter = _ref2.patternToAppendAfter,
       fileContent = _ref2.fileContent;
+
+  if (fileContent.indexOf(lineToAppend) !== -1) {
+    // included exists
+    return fileContent;
+  }
 
   var lines = fileContent.split('\n');
   var lastLineWithPattern = _lodash2.default.findLastIndex(lines, function (line) {
@@ -77,7 +86,7 @@ function appendChildToReactComponent(_ref4) {
     return '    ' + line;
   }).join('\n');
   return prependLine({
-    lineToAppend: tabbed,
+    lineToPrepend: tabbed,
     fileContent: fileContent,
     patternToPrepend: RegExp('</' + parentName + '>', 'g')
   });

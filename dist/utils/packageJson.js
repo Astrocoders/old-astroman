@@ -36,7 +36,7 @@ function getAppMainPackagePath() {
 }
 
 function getAppMainPackage() {
-  return _fs2.default.readFileSync(_path2.default.join(getAppMainPackagePath(), 'package.json'));
+  return _fs2.default.readFileSync(_path2.default.join(getAppMainPackagePath(), 'package.json')).toString();
 }
 
 function itHasPackageInItsDeps(_ref) {

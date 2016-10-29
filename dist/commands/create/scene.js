@@ -9,9 +9,9 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _colors = require('colors');
+var _safe = require('colors/safe');
 
-var _colors2 = _interopRequireDefault(_colors);
+var _safe2 = _interopRequireDefault(_safe);
 
 var _path = require('path');
 
@@ -46,15 +46,15 @@ function scene(_ref) {
 
   var filePath = _path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), pathes.scenes, name + '.js');
 
-  console.log(('Creating scene ' + name + '...').white.bold);
+  console.log(_safe2.default.white.bold('Creating scene ' + name + '...'));
   try {
     _fs2.default.writeFileSync(filePath, (0, _component2.default)({ name: name }));
   } catch (error) {
-    console.log(('Couldn\'t create ' + filePath + ' due to:').red.bold);
+    console.log(_safe2.default.red.bold('Couldn\'t create ' + filePath + ' due to:'));
     console.log(error);
     process.exit(1);
   }
-  console.log('Success'.green.bold);
+  console.log(_safe2.default.green.bold('Success'));
 
   var rootScenesPath = _path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), pathes.rootScenes);
   var rootScenes = _fs2.default.readFileSync(_path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), pathes.rootScenes)).toString();
@@ -71,14 +71,14 @@ function scene(_ref) {
     });
   });
 
-  console.log('Updating app scenes'.white.bold);
+  console.log(_safe2.default.white.bold('Updating app scenes'));
   try {
     _fs2.default.writeFileSync(rootScenesPath, newScenes);
   } catch (error) {
-    console.log(('Couldn\'t create ' + filePath + ' due to:').red.bold);
+    console.log(_safe2.default.red.bold('Couldn\'t create ' + filePath + ' due to:'));
     console.log(error);
     process.exit(1);
   }
-  console.log('Success'.green.bold);
-  console.log(('\nDone. Now go to ' + filePath.replace(process.cwd(), '') + ' and start rocking!').white);
+  console.log(_safe2.default.green.bold('Success'));
+  console.log(_safe2.default.white('\nDone. Now go to ' + filePath.replace(process.cwd(), '') + ' and start rocking!'));
 }
