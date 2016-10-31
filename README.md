@@ -21,5 +21,10 @@ Create service:
 ```
 astroman create service OneSignalSetup
 ```
+## Init helper
+`astroman` helps you initialize these type of projects:
+```
+astroman init react-native-meteor MyProject // Will create a react native project from https://github.com/Astrocoders/astro-meteor-served-rn-boilerplate
+```
 
 ### More coming
