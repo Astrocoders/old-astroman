@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.run = run;
+exports.default = run;
 
 var _child_process = require('child_process');
 

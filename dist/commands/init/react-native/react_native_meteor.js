@@ -35,7 +35,7 @@ function reactNativeMeteor(_ref) {
   var projectPath = _path2.default.resolve(process.cwd(), name);
 
   console.log(_safe2.default.white.bold('Fetching boilerplate...'));
-  gitClone(gitRepoUrl).then(function () {
+  gitClone(gitRepoUrl, name).then(function () {
     console.log(_safe2.default.green.bold('Boilerplate fetched'));
   }).then(function () {
     console.log(_safe2.default.white.bold('Configuring new project...'));
@@ -65,8 +65,8 @@ function reactNativeMeteor(_ref) {
   });
 }
 
-function gitClone(repo) {
-  return (0, _run2.default)('git clone ' + gitRepo + ' --depth=1 ' + name);
+function gitClone(repo, name) {
+  return (0, _run2.default)('git clone ' + gitRepoUrl + ' --depth=1 ' + name);
 }
 
 function removeGit(projectPath) {
