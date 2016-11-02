@@ -1,6 +1,6 @@
 {
   "name": "astroman",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Rapid scaffolding for React Native, Meteor and React Boilerplate projects",
   "repository": {
     "url": "git@github.com:Astrocoders/astroman.git",
