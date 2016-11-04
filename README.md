@@ -13,13 +13,9 @@ Create scenes:
 ```
 astroman create scene Dashboard
 ```
-Create helper:
+Create component:
 ```
-astroman create helper CloudinaryURL
-```
-Create service:
-```
-astroman create service OneSignalSetup
+astroman create component ButtonRounded
 ```
 ## Init helper
 `astroman` helps you initialize these type of projects:
