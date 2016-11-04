@@ -7,6 +7,9 @@ exports.default = run;
 
 var _child_process = require('child_process');
 
+/*
+ * Run a given command in shell and returns a Promise
+*/
 function run(command) {
   return new Promise(function (resolve, reject) {
     var proc = (0, _child_process.exec)(command);
