@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.prependLine = prependLine;
 exports.appendLine = appendLine;
 exports.appendImport = appendImport;
+exports.appendImportToFile = appendImportToFile;
 exports.appendChildToReactComponent = appendChildToReactComponent;
 exports.appendScene = appendScene;
 
@@ -20,6 +21,16 @@ var _scene2 = _interopRequireDefault(_scene);
 var _import = require('../templates/import');
 
 var _import2 = _interopRequireDefault(_import);
+
+var _fs = require('fs');
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _packageJson = require('../utils/packageJson');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -75,11 +86,26 @@ function appendImport(_ref3) {
   });
 }
 
+function appendImportToFile(_ref4) {
+  var namespace = _ref4.namespace,
+      importPath = _ref4.importPath,
+      fileToModify = _ref4.fileToModify;
+
+  var resolvedPath = _path2.default.join((0, _packageJson.getAppMainPackagePath)(), fileToModify);
+  var fileContent = _fs2.default.readFileSync(resolvedPath).toString();
+
+  _fs2.default.writeFileSync(resolvedPath, appendImport({
+    namespace: namespace,
+    path: importPath.replace('src/', '~/'),
+    fileContent: fileContent
+  }));
+}
+
 // Not the best way of doing this but gonna use this for now
-function appendChildToReactComponent(_ref4) {
-  var parentName = _ref4.parentName,
-      childDef = _ref4.childDef,
-      fileContent = _ref4.fileContent;
+function appendChildToReactComponent(_ref5) {
+  var parentName = _ref5.parentName,
+      childDef = _ref5.childDef,
+      fileContent = _ref5.fileContent;
 
   // force tabbing, increment spacing in front of each line
   var tabbed = childDef.split('\n').map(function (line) {
@@ -92,9 +118,9 @@ function appendChildToReactComponent(_ref4) {
   });
 }
 
-function appendScene(_ref5) {
-  var name = _ref5.name,
-      fileContent = _ref5.fileContent;
+function appendScene(_ref6) {
+  var name = _ref6.name,
+      fileContent = _ref6.fileContent;
 
   return appendChildToReactComponent({
     childDef: (0, _scene2.default)({ name: name }),

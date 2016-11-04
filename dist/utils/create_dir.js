@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = createFile;
+exports.default = createDir;
 
 var _fs = require('fs');
 
@@ -21,19 +21,16 @@ var _packageJson = require('./packageJson');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function createFile(_ref) {
-  var filePath = _ref.filePath,
-      content = _ref.content;
-
-  console.log(_safe2.default.white.bold('Creating ' + _path2.default.basename(filePath)));
+function createDir(_ref) {
+  var dirPath = _ref.dirPath;
 
   try {
-    _fs2.default.writeFileSync(_path2.default.join((0, _packageJson.getAppMainPackagePath)(), filePath), content);
+    _fs2.default.mkdirSync(_path2.default.join((0, _packageJson.getAppMainPackagePath)(), dirPath));
   } catch (error) {
-    console.log(_safe2.default.red.bold('Couldn\'t create file due to:'));
+    // not a problem!
+    if (error.code === 'EEXIST') return;
+    console.log(_safe2.default.red.bold('Couldn\'t create directory due to:'));
     console.log(error);
     process.exit(1);
   }
-
-  console.log(_safe2.default.green.bold('Successfully created ' + filePath));
 }

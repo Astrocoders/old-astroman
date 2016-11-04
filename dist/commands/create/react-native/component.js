@@ -29,7 +29,7 @@ function component(_ref) {
   var filePath = _path2.default.join(pathes.components, name + '.js');
 
   (0, _create_file2.default)({
-    filePath: 2,
+    filePath: filePath,
     content: (0, _component2.default)({ name: name })
   });
 }

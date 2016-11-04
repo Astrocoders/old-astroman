@@ -24,6 +24,10 @@ var describe = exports.describe = 'scaffolds a file';
 
 var handler = exports.handler = function handler(argv) {
   if ((0, _environment.isReactNative)()) {
+    if (!reactNativeCmds[argv.name]) {
+      console.log(_safe2.default.red(argv.name + ' doesn\'t seem to be a create sub-command.'));
+      return;
+    }
     reactNativeCmds[argv.name]({ name: argv.value });
     return;
   }
