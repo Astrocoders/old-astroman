@@ -24,6 +24,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "find-config": "^1.0.0",
+    "jscodeshift": "^0.3.30",
     "lodash": "^4.16.4",
     "replace": "^0.3.0",
     "rimraf": "^2.5.4",
