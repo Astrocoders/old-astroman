@@ -25,6 +25,8 @@ var _read_file = require('../read_file');
 
 var _read_file2 = _interopRequireDefault(_read_file);
 
+var _lodash = require('lodash');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function appendImport(_ref) {
@@ -33,10 +35,18 @@ function appendImport(_ref) {
       filePath = _ref.filePath;
 
   var fileContent = (0, _read_file2.default)({ filePath: filePath });
+  var ast = (0, _jscodeshift2.default)(fileContent);
   var newImport = _jscodeshift2.default.importDeclaration([_jscodeshift2.default.importDefaultSpecifier(_jscodeshift2.default.identifier(name))], _jscodeshift2.default.literal(local));
-  var modulesSpecs = (0, _jscodeshift2.default)(fileContent).find(_jscodeshift2.default.ImportDeclaration);
+  var modulesSpecs = ast.find(_jscodeshift2.default.ImportDeclaration);
 
-  var newContent = modulesSpecs.at(modulesSpecs.nodes().length - 1).insertAfter(newImport).toSource({
+  // If already there no need to proceed
+  if ((0, _lodash.some)(modulesSpecs.find(_jscodeshift2.default.Literal).nodes(), function (path) {
+    return path.value === local;
+  })) {
+    return;
+  }
+
+  var newContent = modulesSpecs.at(modulesSpecs.nodes().length).insertAfter(newImport).toSource({
     quotes: 'single',
     trailingComma: true
   });

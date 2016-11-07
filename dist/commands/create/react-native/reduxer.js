@@ -74,11 +74,11 @@ function component(_ref) {
     });
   });
 
-  console.log(_safe2.default.white.bold('Updating redux\'s reducers...'));
+  console.log(_safe2.default.white('Updating redux\'s reducers...'));
   var reducersPath = _path2.default.join(pathes.redux, 'reducers/index.js');
   (0, _append_import2.default)({
     name: lowerCasedName,
-    local: _path2.default.join(dirPath, 'reducer.js'),
+    local: _path2.default.join(dirPath, 'reducer.js').replace('src/redux', '..'),
     filePath: reducersPath
   });
   // TODO: Create a helper to write in files without needing to put the absolute path
@@ -89,5 +89,5 @@ function component(_ref) {
     fileContent: _fs2.default.readFileSync(absoluteReducersPath).toString()
   }));
 
-  console.log(_safe2.default.green('Redux files for ' + name + ' were succesfully created.'));
+  console.log(_safe2.default.green.bold('\nRedux files for ' + name + ' were succesfully created.'));
 }

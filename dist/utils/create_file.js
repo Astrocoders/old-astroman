@@ -25,15 +25,15 @@ function createFile(_ref) {
   var filePath = _ref.filePath,
       content = _ref.content;
 
-  console.log(_safe2.default.white.bold('Creating ' + _path2.default.basename(filePath)));
+  console.log(_safe2.default.white('Creating ' + _path2.default.basename(filePath)));
 
   try {
     _fs2.default.writeFileSync(_path2.default.join((0, _packageJson.getAppMainPackagePath)(), filePath), content);
   } catch (error) {
-    console.log(_safe2.default.red.bold('Couldn\'t create file due to:'));
+    console.log(_safe2.default.red('Couldn\'t create file due to:'));
     console.log(error);
     process.exit(1);
   }
 
-  console.log(_safe2.default.green.bold('Successfully created ' + filePath));
+  console.log(_safe2.default.green('Successfully created ' + filePath));
 }
