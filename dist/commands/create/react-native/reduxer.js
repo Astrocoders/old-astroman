@@ -41,6 +41,14 @@ var _packageJson = require('../../../utils/packageJson');
 
 var _js_code = require('../../../utils/js_code');
 
+var _append_import = require('../../../utils/js/append_import');
+
+var _append_import2 = _interopRequireDefault(_append_import);
+
+var _append_reducer = require('../../../utils/js/append_reducer');
+
+var _append_reducer2 = _interopRequireDefault(_append_reducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var pathes = {
@@ -68,16 +76,17 @@ function component(_ref) {
 
   console.log(_safe2.default.white.bold('Updating redux\'s reducers...'));
   var reducersPath = _path2.default.join(pathes.redux, 'reducers/index.js');
-  (0, _js_code.appendImportToFile)({
-    namespace: lowerCasedName,
-    importPath: _path2.default.join(dirPath, 'reducer.js'),
-    fileToModify: reducersPath
+  (0, _append_import2.default)({
+    name: lowerCasedName,
+    local: _path2.default.join(dirPath, 'reducer.js'),
+    filePath: reducersPath
   });
   // TODO: Create a helper to write in files without needing to put the absolute path
-  _fs2.default.writeFileSync(_path2.default.join((0, _packageJson.getAppMainPackagePath)(), reducersPath), (0, _js_code.prependLine)({
-    lineToPrepend: '  ' + lowerCasedName + ',',
-    patternToPrepend: /\}\)/,
-    fileContent: _fs2.default.readFileSync(_path2.default.join((0, _packageJson.getAppMainPackagePath)(), reducersPath)).toString()
+
+  var absoluteReducersPath = _path2.default.join((0, _packageJson.getAppMainPackagePath)(), reducersPath);
+  _fs2.default.writeFileSync(absoluteReducersPath, (0, _append_reducer2.default)({
+    name: lowerCasedName,
+    fileContent: _fs2.default.readFileSync(absoluteReducersPath).toString()
   }));
 
   console.log(_safe2.default.green('Redux files for ' + name + ' were succesfully created.'));
