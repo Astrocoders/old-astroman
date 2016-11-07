@@ -5,7 +5,7 @@ Rapid scaffolding for React Native, Meteor and React Boilerplate [add more descr
 
 ## Install
 ```
-yarn add --global astroman
+yarn global add astroman
 ```
 
 ## Usage
