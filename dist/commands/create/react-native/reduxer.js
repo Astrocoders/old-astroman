@@ -49,16 +49,16 @@ var _append_reducer = require('../../../utils/js/append_reducer');
 
 var _append_reducer2 = _interopRequireDefault(_append_reducer);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _pathes = require('../../../utils/pathes');
 
-var pathes = {
-  redux: 'src/redux'
-};
+var _pathes2 = _interopRequireDefault(_pathes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function component(_ref) {
   var name = _ref.name;
 
-  var dirPath = _path2.default.join(pathes.redux, '' + name);
+  var dirPath = _path2.default.join(_pathes2.default.redux, '' + name);
   var lowerCasedName = name.toLowerCase();
 
   (0, _create_dir2.default)({
@@ -75,7 +75,7 @@ function component(_ref) {
   });
 
   console.log(_safe2.default.white('Updating redux\'s reducers...'));
-  var reducersPath = _path2.default.join(pathes.redux, 'reducers/index.js');
+  var reducersPath = _path2.default.join(_pathes2.default.redux, 'reducers/index.js');
   (0, _append_import2.default)({
     name: lowerCasedName,
     local: _path2.default.join(dirPath, 'reducer.js').replace('src/redux', '..'),

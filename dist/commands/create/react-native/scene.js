@@ -25,6 +25,10 @@ var _packageJson = require('../../../utils/packageJson');
 
 var _js_code = require('../../../utils/js_code');
 
+var _pathes = require('../../../utils/pathes');
+
+var _pathes2 = _interopRequireDefault(_pathes);
+
 var _component = require('../../../templates/component');
 
 var _component2 = _interopRequireDefault(_component);
@@ -35,16 +39,10 @@ var _scene2 = _interopRequireDefault(_scene);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var pathes = {
-  scenes: 'src/Routes/',
-  rootRouter: 'src/AppRouteRouter.js',
-  rootScenes: 'src/Scenes.js'
-};
-
 function scene(_ref) {
   var name = _ref.name;
 
-  var filePath = _path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), pathes.scenes, name + '.js');
+  var filePath = _path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), _pathes2.default.scenes, name + '.js');
 
   console.log(_safe2.default.white.bold('Creating scene ' + name + '...'));
   try {
@@ -56,12 +54,12 @@ function scene(_ref) {
   }
   console.log(_safe2.default.green.bold('Success'));
 
-  var rootScenesPath = _path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), pathes.rootScenes);
-  var rootScenes = _fs2.default.readFileSync(_path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), pathes.rootScenes)).toString();
+  var rootScenesPath = _path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), _pathes2.default.rootScenes);
+  var rootScenes = _fs2.default.readFileSync(_path2.default.resolve((0, _packageJson.getAppMainPackagePath)(), _pathes2.default.rootScenes)).toString();
   var newScenes = (0, _lodash2.default)(rootScenes).thru(function (fileContent) {
     return (0, _js_code.appendImport)({
       namespace: name,
-      path: _path2.default.resolve('/', pathes.scenes, name),
+      path: _path2.default.resolve('/', _pathes2.default.scenes, name),
       fileContent: fileContent
     });
   }).thru(function (fileContent) {

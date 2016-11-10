@@ -36,6 +36,7 @@ function appendImport(_ref) {
 
   var fileContent = (0, _read_file2.default)({ filePath: filePath });
   var ast = (0, _jscodeshift2.default)(fileContent);
+  // FIXME: `quotes: single` not working for the import path here
   var newImport = _jscodeshift2.default.importDeclaration([_jscodeshift2.default.importDefaultSpecifier(_jscodeshift2.default.identifier(name))], _jscodeshift2.default.literal(local));
   var modulesSpecs = ast.find(_jscodeshift2.default.ImportDeclaration);
 
@@ -46,7 +47,7 @@ function appendImport(_ref) {
     return;
   }
 
-  var newContent = modulesSpecs.at(modulesSpecs.nodes().length).insertAfter(newImport).toSource({
+  var newContent = modulesSpecs.at(modulesSpecs.nodes().length - 1).insertAfter(newImport).toSource({
     quotes: 'single',
     trailingComma: true
   });
