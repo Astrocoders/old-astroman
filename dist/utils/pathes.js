@@ -12,9 +12,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ROOT = 'app/';
 exports.default = {
-  components: _path2.default.resolve(ROOT, '/components'),
-  redux: _path2.default.resolve(ROOT, '/redux'),
-  scenes: _path2.default.resolve(ROOT, 'Routes/'),
-  rootRouter: _path2.default.resolve(ROOT, '/Scenes/App/index.js'),
-  rootScenes: _path2.default.resolve(ROOT, '/Scenes/index.js')
+  components: _path2.default.join(ROOT, '/Components'),
+  redux: _path2.default.join(ROOT, '/redux'),
+  scenes: _path2.default.join(ROOT, 'Routes/'),
+  rootRouter: _path2.default.join(ROOT, '/Scenes/App/index.js'),
+  rootScenes: _path2.default.join(ROOT, '/Scenes/index.js')
 };
