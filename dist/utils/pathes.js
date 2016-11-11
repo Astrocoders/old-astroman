@@ -14,7 +14,7 @@ var ROOT = 'app/';
 exports.default = {
   components: _path2.default.join(ROOT, '/Components'),
   redux: _path2.default.join(ROOT, '/redux'),
-  scenes: _path2.default.join(ROOT, 'Routes/'),
+  scenes: _path2.default.join(ROOT, 'Scenes/'),
   rootRouter: _path2.default.join(ROOT, '/Scenes/App/index.js'),
   rootScenes: _path2.default.join(ROOT, '/Scenes/index.js')
 };

@@ -59,7 +59,7 @@ function scene(_ref) {
   var newScenes = (0, _lodash2.default)(rootScenes).thru(function (fileContent) {
     return (0, _js_code.appendImport)({
       namespace: name,
-      path: _path2.default.resolve('/', _pathes2.default.scenes, name),
+      path: _path2.default.resolve('./', name),
       fileContent: fileContent
     });
   }).thru(function (fileContent) {
