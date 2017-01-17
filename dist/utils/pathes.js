@@ -18,8 +18,8 @@ exports.default = {
   rootRouter: _path2.default.join(ROOT, '/Scenes/App/index.js'),
   rootScenes: _path2.default.join(ROOT, '/Scenes/index.js'),
   meteor: {
-    methods: _path2.default.join(ROOT, '/imports/server/methods/'),
-    publications: _path2.default.join(ROOT, '/imports/publications/methods/'),
-    collections: _path2.default.join(ROOT, '/imports/both/collections/')
+    methods: '/imports/server/methods/',
+    publications: '/imports/publications/methods/',
+    collections: '/imports/both/collections/'
   }
 };
