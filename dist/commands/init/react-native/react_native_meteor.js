@@ -28,6 +28,7 @@ var _path2 = _interopRequireDefault(_path);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var gitRepoUrl = 'git@github.com:Astrocoders/astro-meteor-served-rn-boilerplate.git';
+
 var boilerplateName = 'AstroApp';
 function reactNativeMeteor(_ref) {
   var name = _ref.name;

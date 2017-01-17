@@ -16,5 +16,10 @@ exports.default = {
   redux: _path2.default.join(ROOT, '/redux'),
   scenes: _path2.default.join(ROOT, 'Scenes/'),
   rootRouter: _path2.default.join(ROOT, '/Scenes/App/index.js'),
-  rootScenes: _path2.default.join(ROOT, '/Scenes/index.js')
+  rootScenes: _path2.default.join(ROOT, '/Scenes/index.js'),
+  meteor: {
+    methods: _path2.default.join(ROOT, '/imports/server/methods/'),
+    publications: _path2.default.join(ROOT, '/imports/publications/methods/'),
+    collections: _path2.default.join(ROOT, '/imports/both/collections/')
+  }
 };
