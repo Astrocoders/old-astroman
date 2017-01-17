@@ -23,6 +23,11 @@ $ astroman create reduxer Todos
 # creates redux/Todos/reducer.js, redux/Todos/actions.js/ redux/Todos/Container.js
 # it also update the main reducers file with the new reducer
 ```
+### Meteor
+Create methods:
+```
+$ astroman create method articles/update articleSlug:String,authorId:SimpleSchema.RegEx.Id
+```
 
 ## Init helper
 `astroman` helps you initialize these type of projects:
