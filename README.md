@@ -17,6 +17,7 @@ astroman init react-native MyProject
 ```
 ![Init react native](https://github.com/Astrocoders/astroman/raw/develop/imgs/initReactNative.gif)
 
+## Create
 Create scenes:
 ```
 $ astroman create scene Dashboard
