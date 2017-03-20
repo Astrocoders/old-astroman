@@ -15,7 +15,7 @@ yarn global add astroman
 ```
 astroman init react-native MyProject
 ```
-![Init react native](https://github.com/Astrocoders/astroapp-rn-boilerplate/raw/develop/imgs/initReactNative.gif)
+![Init react native](https://github.com/Astrocoders/astroman/raw/develop/imgs/initReactNative.gif)
 
 Create scenes:
 ```
