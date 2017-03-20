@@ -9,6 +9,14 @@ yarn global add astroman
 ```
 
 ## Usage
+
+## Init
+`astroman` helps you initialize these type of projects:
+```
+astroman init react-native MyProject
+```
+![Init react native](https://github.com/Astrocoders/astroapp-rn-boilerplate/raw/develop/imgs/initReactNative.gif)
+
 Create scenes:
 ```
 $ astroman create scene Dashboard
@@ -27,12 +35,6 @@ $ astroman create reduxer Todos
 Create methods:
 ```
 $ astroman create method articles/update articleSlug:String,authorId:SimpleSchema.RegEx.Id
-```
-
-## Init helper
-`astroman` helps you initialize these type of projects:
-```
-astroman init react-native-meteor MyProject // Will create a react native project from https://github.com/Astrocoders/astro-meteor-served-rn-boilerplate
 ```
 
 ### What's coming
