@@ -28,8 +28,8 @@ $ astroman create component ButtonRounded
 ```
 Create redux files:
 ```
-$ astroman create reduxer Todos
-# creates redux/Todos/reducer.js, redux/Todos/actions.js/ redux/Todos/Container.js
+$ astroman create redux Todos
+# creates redux/Todos/reducer.js, redux/Todos/actions.js/ redux/Todos/Container.js redux/Todos/logic.js
 # it also update the main reducers file with the new reducer
 ```
 ### Meteor
@@ -40,7 +40,6 @@ $ astroman create method articles/update articleSlug:String,authorId:SimpleSchem
 
 ### What's coming
 - A single boilerplate for React Native and commands for removing or adding integrations (Meteor, Relay, Apollo, etc.).
-- Better JS code update logic (for now we're using RegExps [ok we know, sorry!]) we plan to use some neat AST.
 
 ### Contributing
 PRs and issues are welcome!
