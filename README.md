@@ -40,6 +40,7 @@ $ astroman create method articles/update articleSlug:String,authorId:SimpleSchem
 
 ### What's coming
 - A single boilerplate for React Native and commands for removing or adding integrations (Meteor, Relay, Apollo, etc.).
+- Better testing integration
 
 ### Contributing
 PRs and issues are welcome!
