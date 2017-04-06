@@ -27,6 +27,7 @@
     "jscodeshift": "^0.3.30",
     "lodash": "^4.16.4",
     "mkdirp": "^0.5.1",
+    "prettier": "^0.22.0",
     "replace": "^0.3.0",
     "rimraf": "^2.5.4",
     "yargs": "^6.3.0"
