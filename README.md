@@ -32,6 +32,12 @@ $ astroman create redux Todos
 # creates redux/Todos/reducer.js, redux/Todos/actions.js/ redux/Todos/Container.js redux/Todos/logic.js
 # it also update the main reducers file with the new reducer
 ```
+Create redux action (requires `create redux` to have been called before!):
+```
+$ astroman create reduxAction Todo/addNewOne
+```
+This one will create the action creator in `Todos/actions.js`, the constant in `Todos/constants.js` and add the new
+switch entry in `Todos/reducer.js`
 ### Meteor
 Create methods:
 ```
