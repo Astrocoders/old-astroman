@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "colors": "^1.1.2",
+    "common-tags": "^1.4.0",
     "find-config": "^1.0.0",
     "jscodeshift": "^0.3.30",
     "lodash": "^4.16.4",
