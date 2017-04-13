@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reduxActions it should properly change the actions file 1`] = `
+Object {
+  "ast": "import {FOO, BAR} from './constants';
+export function foo(){
+return {
+type: FOO,
+}
+}
+
+export function BAR() {
+  return {
+    \\"type\\": BAR
+  };
+}",
+  "filePath": "src/redux/Mocked/actions.js",
+}
+`;
+
+exports[`reduxActions it should properly change the constants file 1`] = `
+Object {
+  "ast": "export const FOO = 'mocked/FOO'
+export const BAR = \\"mocked/BAR\\";",
+  "filePath": "src/redux/Mocked/constants.js",
+}
+`;
+
+exports[`reduxActions it should properly change the reducers file 1`] = `
+Object {
+  "ast": "import {FOO, BAR} from './constants';
+
+export default function mocked(state, {type, payload}){
+switch (type) {
+case FOO: return {...state}
+case BAR:
+  return state;
+default: return {...state}
+}
+}",
+  "filePath": "src/redux/Mocked/reducer.js",
+}
+`;
