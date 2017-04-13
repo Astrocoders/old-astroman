@@ -49,10 +49,10 @@
         "module-resolver",
         {
           "root": [
-            "./src"
+            "./lib"
           ],
           "alias": {
-            "~": "./src"
+            "~": "./lib"
           }
         }
       ]
