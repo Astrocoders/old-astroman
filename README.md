@@ -44,9 +44,14 @@ Create methods:
 $ astroman create method articles/update articleSlug:String,authorId:SimpleSchema.RegEx.Id
 ```
 
-### What's coming
-- A single boilerplate for React Native and commands for removing or adding integrations (Meteor, Relay, Apollo, etc.).
-- Better testing integration
+# Astroplugins
+A better reusage of feautures across apps.
+WIP docs
+
+## Commands
+```
+$ astroman plug git@github.com:user/repo.git
+```
 
 ### Contributing
 PRs and issues are welcome!
