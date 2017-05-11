@@ -13,7 +13,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "flow": "flow"
+    "flow": "flow",
+    "release:minor": "npm version minor && git push --tags && git push origin develop && release"
   },
   "bin": {
     "astroman": "dist/index.js"
