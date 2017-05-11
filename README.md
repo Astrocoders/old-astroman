@@ -47,10 +47,8 @@ This one will create the action creator in `Todos/actions.js`, the constant in `
 switch entry in `Todos/reducer.js`
 
 ## Astroplugins
-With astroplugins we intend to encapsule "tiny apps" with their own ecosystem as reusable packages
-easily to plug in in the main one.
-For that we estabilished that the main app should always when possible use only redux and redux-logics as middleman to communicate
-with data and site effects. Of course that there should be cases where you need to make exceptions, but try to stick with that as much as you can. Using redux and redux-logics as middleman offers a incredible abstraction allowing you to stop rewriting integrations for every backend.
+With astroplugins we intend to encapsulate "tiny apps" with their own ecosystem as reusable packages easily to plug in in the main one.
+For that we established that the main app should always, when possible, use only redux and redux-logics as middleman to communicate with data and side effects. Of course that there should be cases where you need to make exceptions, but try to stick with that as much as you can. Using redux and redux-logics as middleman offers a incredible abstraction allowing you to stop rewriting integrations for every backend.
 
 ## Commands
 ### astroman plug [gitURL]
