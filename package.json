@@ -10,11 +10,12 @@
   "license": "MIT",
   "scripts": {
     "prepublish": "rm -rf dist && babel lib/ --out-dir dist/ --ignore=**/tests",
-    "test": "jest",
+    "test": "xo && jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "flow": "flow",
-    "release:minor": "npm version minor && git push --tags && git push origin develop && release"
+    "release:minor": "npm version minor && git push --tags && git push origin develop && release",
+    "lint": "xo"
   },
   "bin": {
     "astroman": "dist/index.js"
@@ -39,7 +40,8 @@
     "babel-core": "^6.24.1",
     "babel-plugin-module-resolver": "^2.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "xo": "^0.18.2"
   },
   "babel": {
     "presets": [
@@ -69,5 +71,9 @@
     "coveragePathIgnorePatterns": [
       "/test_artifacts/"
     ]
+  },
+  "xo": {
+    "semicolons": false,
+    "space": true
   }
 }
