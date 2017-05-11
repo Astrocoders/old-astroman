@@ -39,7 +39,7 @@ $ astroman create redux Todos
 # it also update the main reducers file with the new reducer
 ```
 ### astroman create reduxAction [InterfaceName/actionName]
-IMPORTANT: *Requires `create redux` to have been called before!*
+IMPORTANT: _Requires `create redux` to have been called before!_
 ```
 $ astroman create reduxAction Todos/addNewOne
 ```
