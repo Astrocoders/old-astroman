@@ -78,6 +78,11 @@
     "space": true,
     "envs": ["node", "jest"],
     "filename-case": "camelCase",
+    "rules": {
+      "unicorn/no-process-exit": 0,
+      "unicorn/filename-case": [1, "camelCase"],
+      "comma-dangle": [1, "always-multiline"]
+    },
     "settings": {
       "import/resolver": {
         "babel-module": {}
